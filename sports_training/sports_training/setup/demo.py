@@ -43,8 +43,8 @@ def make_demo_data():
             
     # 4. Create Athletes
     athletes = [
-        {"doctype": "Athlete", "first_name": "Mike", "last_name": "Tyson", "email": "mike.tyson@example.com", "primary_sport": "Boxing", "date_of_birth": "1966-06-30"},
-        {"doctype": "Athlete", "first_name": "Emily", "last_name": "Blunt", "email": "emily.blunt@example.com", "primary_sport": "Tennis", "date_of_birth": "1983-02-23"}
+        {"doctype": "Athlete", "first_name": "Mike", "last_name": "Tyson", "email": "mike.tyson@example.com", "primary_sport": "Boxing", "date_of_birth": "1966-06-30", "gender": "Male"},
+        {"doctype": "Athlete", "first_name": "Emily", "last_name": "Blunt", "email": "emily.blunt@example.com", "primary_sport": "Tennis", "date_of_birth": "1983-02-23", "gender": "Female"}
     ]
     created_athletes = []
     for a in athletes:
