@@ -1,0 +1,17 @@
+{
+ "doctype": "DocType",
+ "istable": 1,
+ "module": "Sports Training",
+ "name": "Performance Metric",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "metric_name", "fieldtype": "Data", "label": "Metric", "in_list_view": 1, "reqd": 1},
+  {"fieldname": "value", "fieldtype": "Float", "label": "Value", "in_list_view": 1},
+  {"fieldname": "unit", "fieldtype": "Data", "label": "Unit", "in_list_view": 1},
+  {"fieldname": "benchmark", "fieldtype": "Float", "label": "Benchmark"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ]
+}

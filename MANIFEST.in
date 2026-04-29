@@ -1,0 +1,17 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sports_training *.css
+recursive-include sports_training *.csv
+recursive-include sports_training *.html
+recursive-include sports_training *.ico
+recursive-include sports_training *.js
+recursive-include sports_training *.json
+recursive-include sports_training *.md
+recursive-include sports_training *.png
+recursive-include sports_training *.py
+recursive-include sports_training *.svg
+recursive-include sports_training *.txt

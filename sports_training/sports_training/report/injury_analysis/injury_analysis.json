@@ -1,0 +1,14 @@
+{
+ "add_total_row": 0,
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "modified": "2024-01-01 00:00:00",
+ "module": "Sports Training",
+ "name": "Injury Analysis",
+ "owner": "Administrator",
+ "ref_doctype": "Injury Record",
+ "report_name": "Injury Analysis",
+ "report_type": "Script Report",
+ "roles": [{"role": "Sports Manager"}, {"role": "Physio"}]
+}

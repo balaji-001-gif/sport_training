@@ -1,0 +1,16 @@
+{
+ "chart_name": "Monthly Revenue",
+ "chart_type": "Sum",
+ "doctype": "Dashboard Chart",
+ "document_type": "Athlete Membership",
+ "based_on": "creation",
+ "value_based_on": "amount_paid",
+ "is_public": 1,
+ "is_standard": 1,
+ "module": "Sports Training",
+ "name": "Monthly Revenue",
+ "owner": "Administrator",
+ "time_interval": "Monthly",
+ "timeseries": 1,
+ "type": "Bar"
+}

@@ -1,0 +1,18 @@
+{
+ "doctype": "DocType",
+ "istable": 1,
+ "module": "Sports Training",
+ "name": "Competition Participant",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "athlete", "fieldtype": "Link", "label": "Athlete", "options": "Athlete", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "athlete_name", "fieldtype": "Data", "fetch_from": "athlete.athlete_name", "read_only": 1, "in_list_view": 1, "label": "Name"},
+  {"fieldname": "category", "fieldtype": "Data", "label": "Category", "in_list_view": 1},
+  {"fieldname": "position", "fieldtype": "Data", "label": "Position/Rank", "in_list_view": 1},
+  {"fieldname": "score", "fieldtype": "Data", "label": "Score"},
+  {"fieldname": "medal", "fieldtype": "Select", "label": "Medal", "options": "\nGold\nSilver\nBronze\nNone"}
+ ]
+}

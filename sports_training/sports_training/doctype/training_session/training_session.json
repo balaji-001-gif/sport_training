@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series", "session_date", "start_time", "end_time", "duration_hours",
+  "column_break_1", "training_program", "session_type", "status", "facility",
+  "section_coach", "primary_coach", "assistant_coaches",
+  "section_athletes", "athletes",
+  "section_plan", "session_plan", "drills", "equipment_used",
+  "section_outcome", "session_notes", "athletes_present", "athletes_absent",
+  "amended_from"
+ ],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "TS-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "session_date", "fieldtype": "Date", "label": "Session Date", "reqd": 1, "in_list_view": 1, "default": "Today"},
+  {"fieldname": "start_time", "fieldtype": "Time", "label": "Start Time", "reqd": 1},
+  {"fieldname": "end_time", "fieldtype": "Time", "label": "End Time", "reqd": 1},
+  {"fieldname": "duration_hours", "fieldtype": "Float", "label": "Duration (Hours)", "read_only": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "training_program", "fieldtype": "Link", "label": "Training Program", "options": "Training Program", "in_list_view": 1},
+  {"fieldname": "session_type", "fieldtype": "Select", "label": "Session Type", "options": "Group\nPersonal\nTeam\nFitness\nSkill\nMatch Practice"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Scheduled\nIn Progress\nCompleted\nCancelled", "default": "Scheduled", "in_list_view": 1},
+  {"fieldname": "facility", "fieldtype": "Link", "label": "Facility", "options": "Facility"},
+  {"fieldname": "section_coach", "fieldtype": "Section Break", "label": "Coaches"},
+  {"fieldname": "primary_coach", "fieldtype": "Link", "label": "Primary Coach", "options": "Coach", "reqd": 1},
+  {"fieldname": "assistant_coaches", "fieldtype": "Table MultiSelect", "label": "Assistant Coaches", "options": "Session Coach"},
+  {"fieldname": "section_athletes", "fieldtype": "Section Break", "label": "Athletes"},
+  {"fieldname": "athletes", "fieldtype": "Table", "label": "Athletes", "options": "Session Athlete"},
+  {"fieldname": "section_plan", "fieldtype": "Section Break", "label": "Session Plan"},
+  {"fieldname": "session_plan", "fieldtype": "Text Editor", "label": "Plan"},
+  {"fieldname": "drills", "fieldtype": "Small Text", "label": "Drills"},
+  {"fieldname": "equipment_used", "fieldtype": "Table MultiSelect", "label": "Equipment", "options": "Session Equipment"},
+  {"fieldname": "section_outcome", "fieldtype": "Section Break", "label": "Outcome"},
+  {"fieldname": "session_notes", "fieldtype": "Text Editor", "label": "Notes"},
+  {"fieldname": "athletes_present", "fieldtype": "Int", "label": "Present", "read_only": 1},
+  {"fieldname": "athletes_absent", "fieldtype": "Int", "label": "Absent", "read_only": 1},
+  {"fieldname": "amended_from", "fieldtype": "Link", "label": "Amended From", "options": "Training Session", "read_only": 1, "no_copy": 1, "print_hide": 1}
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "module": "Sports Training",
+ "name": "Training Session",
+ "owner": "Administrator",
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1, "submit": 1, "cancel": 1, "amend": 1, "report": 1, "export": 1},
+  {"role": "Coach", "create": 1, "read": 1, "write": 1, "submit": 1, "cancel": 1}
+ ],
+ "track_changes": 1
+}

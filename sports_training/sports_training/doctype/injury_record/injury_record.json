@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "INJ-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "athlete", "fieldtype": "Link", "label": "Athlete", "options": "Athlete", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "athlete_name", "fieldtype": "Data", "label": "Name", "fetch_from": "athlete.athlete_name", "read_only": 1},
+  {"fieldname": "injury_date", "fieldtype": "Date", "label": "Injury Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "injury_type", "fieldtype": "Select", "label": "Injury Type", "options": "Strain\nSprain\nFracture\nBruise\nCut\nDislocation\nConcussion\nOther", "in_list_view": 1},
+  {"fieldname": "severity", "fieldtype": "Select", "label": "Severity", "options": "Minor\nModerate\nSevere\nCritical", "in_list_view": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Open\nUnder Treatment\nRecovering\nRecovered\nClosed", "default": "Open", "in_list_view": 1},
+  {"fieldname": "body_part", "fieldtype": "Data", "label": "Body Part"},
+  {"fieldname": "section_details", "fieldtype": "Section Break", "label": "Details"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Description"},
+  {"fieldname": "cause", "fieldtype": "Small Text", "label": "Cause"},
+  {"fieldname": "occurred_during", "fieldtype": "Select", "label": "Occurred During", "options": "Training\nCompetition\nWarmup\nOther"},
+  {"fieldname": "section_treatment", "fieldtype": "Section Break", "label": "Treatment"},
+  {"fieldname": "treatment_plan", "fieldtype": "Text Editor", "label": "Treatment Plan"},
+  {"fieldname": "physiotherapist", "fieldtype": "Data", "label": "Physiotherapist/Doctor"},
+  {"fieldname": "expected_recovery_date", "fieldtype": "Date", "label": "Expected Recovery"},
+  {"fieldname": "actual_recovery_date", "fieldtype": "Date", "label": "Actual Recovery"},
+  {"fieldname": "section_restrictions", "fieldtype": "Section Break", "label": "Restrictions"},
+  {"fieldname": "training_restrictions", "fieldtype": "Small Text", "label": "Training Restrictions"},
+  {"fieldname": "follow_up_notes", "fieldtype": "Text Editor", "label": "Follow Up Notes"}
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "module": "Sports Training",
+ "name": "Injury Record",
+ "owner": "Administrator",
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Coach", "create": 1, "read": 1, "write": 1},
+  {"role": "Physio", "create": 1, "read": 1, "write": 1}
+ ],
+ "track_changes": 1
+}

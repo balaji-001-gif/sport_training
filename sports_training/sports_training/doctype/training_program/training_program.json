@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "autoname": "field:program_name",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "program_name", "sport", "level", "status",
+  "column_break_1", "duration_weeks", "sessions_per_week", "max_participants", "fee",
+  "section_details", "description", "objectives", "prerequisites",
+  "section_schedule", "start_date", "end_date", "head_coach", "facility",
+  "section_modules", "modules"
+ ],
+ "fields": [
+  {"fieldname": "program_name", "fieldtype": "Data", "label": "Program Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "sport", "fieldtype": "Link", "label": "Sport", "options": "Sport", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "level", "fieldtype": "Select", "label": "Level", "options": "Beginner\nIntermediate\nAdvanced\nProfessional", "in_list_view": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nActive\nCompleted\nCancelled", "default": "Draft"},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "duration_weeks", "fieldtype": "Int", "label": "Duration (Weeks)"},
+  {"fieldname": "sessions_per_week", "fieldtype": "Int", "label": "Sessions Per Week"},
+  {"fieldname": "max_participants", "fieldtype": "Int", "label": "Max Participants"},
+  {"fieldname": "fee", "fieldtype": "Currency", "label": "Fee"},
+  {"fieldname": "section_details", "fieldtype": "Section Break", "label": "Details"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Description"},
+  {"fieldname": "objectives", "fieldtype": "Small Text", "label": "Objectives"},
+  {"fieldname": "prerequisites", "fieldtype": "Small Text", "label": "Prerequisites"},
+  {"fieldname": "section_schedule", "fieldtype": "Section Break", "label": "Schedule"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+  {"fieldname": "head_coach", "fieldtype": "Link", "label": "Head Coach", "options": "Coach"},
+  {"fieldname": "facility", "fieldtype": "Link", "label": "Facility", "options": "Facility"},
+  {"fieldname": "section_modules", "fieldtype": "Section Break", "label": "Program Modules"},
+  {"fieldname": "modules", "fieldtype": "Table", "label": "Modules", "options": "Training Program Module"}
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "module": "Sports Training",
+ "name": "Training Program",
+ "owner": "Administrator",
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Coach", "read": 1, "write": 1},
+  {"role": "Athlete", "read": 1}
+ ],
+ "track_changes": 1
+}

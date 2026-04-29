@@ -1,0 +1,27 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Competition",
+ "autoname": "field:competition_name",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "competition_name", "fieldtype": "Data", "label": "Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "sport", "fieldtype": "Link", "label": "Sport", "options": "Sport", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "competition_type", "fieldtype": "Select", "label": "Type", "options": "Tournament\nLeague\nFriendly\nChampionship\nTrials"},
+  {"fieldname": "level", "fieldtype": "Select", "label": "Level", "options": "Local\nDistrict\nState\nNational\nInternational", "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "in_list_view": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+  {"fieldname": "venue", "fieldtype": "Data", "label": "Venue"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Upcoming\nOngoing\nCompleted\nCancelled", "default": "Upcoming"},
+  {"fieldname": "section_participants", "fieldtype": "Section Break", "label": "Participants"},
+  {"fieldname": "participants", "fieldtype": "Table", "label": "Participants", "options": "Competition Participant"},
+  {"fieldname": "section_results", "fieldtype": "Section Break", "label": "Results"},
+  {"fieldname": "results", "fieldtype": "Text Editor", "label": "Results"},
+  {"fieldname": "notes", "fieldtype": "Text Editor", "label": "Notes"}
+ ],
+ "permissions": [{"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1, "report": 1, "export": 1}]
+}

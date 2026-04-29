@@ -1,0 +1,32 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Nutrition Plan",
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "NUT-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "athlete", "fieldtype": "Link", "label": "Athlete", "options": "Athlete", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "athlete_name", "fieldtype": "Data", "fetch_from": "athlete.athlete_name", "read_only": 1, "label": "Name"},
+  {"fieldname": "plan_date", "fieldtype": "Date", "label": "Plan Date", "default": "Today"},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "nutritionist", "fieldtype": "Data", "label": "Nutritionist"},
+  {"fieldname": "duration_weeks", "fieldtype": "Int", "label": "Duration (Weeks)"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nCompleted\nCancelled", "default": "Active"},
+  {"fieldname": "section_targets", "fieldtype": "Section Break", "label": "Daily Targets"},
+  {"fieldname": "daily_calories", "fieldtype": "Float", "label": "Calories (kcal)"},
+  {"fieldname": "protein_grams", "fieldtype": "Float", "label": "Protein (g)"},
+  {"fieldname": "carbs_grams", "fieldtype": "Float", "label": "Carbs (g)"},
+  {"fieldname": "fats_grams", "fieldtype": "Float", "label": "Fats (g)"},
+  {"fieldname": "water_litres", "fieldtype": "Float", "label": "Water (L)"},
+  {"fieldname": "section_meals", "fieldtype": "Section Break", "label": "Meal Plan"},
+  {"fieldname": "meals", "fieldtype": "Text Editor", "label": "Meals"},
+  {"fieldname": "supplements", "fieldtype": "Small Text", "label": "Supplements"},
+  {"fieldname": "restrictions", "fieldtype": "Small Text", "label": "Restrictions"},
+  {"fieldname": "notes", "fieldtype": "Text Editor", "label": "Notes"}
+ ],
+ "permissions": [{"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1}]
+}

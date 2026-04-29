@@ -1,0 +1,21 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Equipment",
+ "autoname": "field:equipment_code",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "equipment_code", "fieldtype": "Data", "label": "Equipment Code", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "equipment_name", "fieldtype": "Data", "label": "Name", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "category", "fieldtype": "Select", "label": "Category", "options": "Training\nFitness\nProtective\nMedical\nGeneral"},
+  {"fieldname": "facility", "fieldtype": "Link", "label": "Facility", "options": "Facility"},
+  {"fieldname": "quantity", "fieldtype": "Int", "label": "Quantity"},
+  {"fieldname": "purchase_date", "fieldtype": "Date", "label": "Purchase Date"},
+  {"fieldname": "condition", "fieldtype": "Select", "label": "Condition", "options": "New\nGood\nFair\nNeeds Repair\nRetired", "in_list_view": 1},
+  {"fieldname": "item", "fieldtype": "Link", "label": "Linked Item", "options": "Item"}
+ ],
+ "permissions": [{"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1}]
+}

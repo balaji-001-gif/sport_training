@@ -1,0 +1,39 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Fitness Test",
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "FT-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "athlete", "fieldtype": "Link", "label": "Athlete", "options": "Athlete", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "athlete_name", "fieldtype": "Data", "fetch_from": "athlete.athlete_name", "read_only": 1, "label": "Name"},
+  {"fieldname": "test_date", "fieldtype": "Date", "label": "Test Date", "reqd": 1, "default": "Today", "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "tester", "fieldtype": "Link", "label": "Tester", "options": "Coach"},
+  {"fieldname": "test_type", "fieldtype": "Select", "label": "Test Type", "options": "Cardio\nStrength\nFlexibility\nAgility\nFull Battery"},
+  {"fieldname": "section_results", "fieldtype": "Section Break", "label": "Results"},
+  {"fieldname": "vo2_max", "fieldtype": "Float", "label": "VO2 Max"},
+  {"fieldname": "resting_heart_rate", "fieldtype": "Int", "label": "Resting HR (bpm)"},
+  {"fieldname": "max_heart_rate", "fieldtype": "Int", "label": "Max HR (bpm)"},
+  {"fieldname": "blood_pressure", "fieldtype": "Data", "label": "Blood Pressure"},
+  {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+  {"fieldname": "sit_ups", "fieldtype": "Int", "label": "Sit-ups"},
+  {"fieldname": "push_ups", "fieldtype": "Int", "label": "Push-ups"},
+  {"fieldname": "pull_ups", "fieldtype": "Int", "label": "Pull-ups"},
+  {"fieldname": "sprint_40m_seconds", "fieldtype": "Float", "label": "40m Sprint (s)"},
+  {"fieldname": "vertical_jump_cm", "fieldtype": "Float", "label": "Vertical Jump (cm)"},
+  {"fieldname": "broad_jump_cm", "fieldtype": "Float", "label": "Broad Jump (cm)"},
+  {"fieldname": "flexibility_cm", "fieldtype": "Float", "label": "Sit & Reach (cm)"},
+  {"fieldname": "plank_seconds", "fieldtype": "Int", "label": "Plank (s)"},
+  {"fieldname": "section_notes", "fieldtype": "Section Break"},
+  {"fieldname": "notes", "fieldtype": "Text Editor", "label": "Notes"}
+ ],
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "Coach", "create": 1, "read": 1, "write": 1}
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Sport",
+ "autoname": "field:sport_name",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "sport_name", "fieldtype": "Data", "label": "Sport Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "category", "fieldtype": "Select", "label": "Category", "options": "Team Sport\nIndividual Sport\nCombat Sport\nRacquet Sport\nWater Sport\nMotor Sport\nWinter Sport\nOther", "in_list_view": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"}
+ ],
+ "permissions": [{"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1}]
+}

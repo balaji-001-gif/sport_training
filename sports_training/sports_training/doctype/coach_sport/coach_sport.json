@@ -1,0 +1,13 @@
+{
+ "doctype": "DocType",
+ "istable": 1,
+ "module": "Sports Training",
+ "name": "Coach Sport",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "sport", "fieldtype": "Link", "label": "Sport", "options": "Sport", "reqd": 1, "in_list_view": 1}
+ ]
+}

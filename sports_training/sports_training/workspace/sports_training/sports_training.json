@@ -1,0 +1,45 @@
+{
+ "charts": [
+  {"chart_name": "Active Athletes", "label": "Active Athletes"},
+  {"chart_name": "Monthly Revenue", "label": "Monthly Revenue"}
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sports Training</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Athlete\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Coach\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Training Session\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Performance Assessment\",\"col\":3}}]",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "Workspace",
+ "icon": "non-profit",
+ "label": "Sports Training",
+ "links": [
+  {"hidden": 0, "is_query_report": 0, "label": "Athletes", "link_to": "Athlete", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Coaches", "link_to": "Coach", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Training Programs", "link_to": "Training Program", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Training Sessions", "link_to": "Training Session", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Performance Assessment", "link_to": "Performance Assessment", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Injury Records", "link_to": "Injury Record", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Nutrition Plans", "link_to": "Nutrition Plan", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Memberships", "link_to": "Athlete Membership", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Competitions", "link_to": "Competition", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Fitness Tests", "link_to": "Fitness Test", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Equipment", "link_to": "Equipment", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Facilities", "link_to": "Facility", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Sports", "link_to": "Sport", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Athlete Performance Report", "link_to": "Athlete Performance Report", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Attendance Summary", "link_to": "Athlete Attendance Summary", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Revenue Analytics", "link_to": "Membership Revenue Analytics", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Coach Utilization", "link_to": "Coach Utilization Report", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Injury Analysis", "link_to": "Injury Analysis", "link_type": "Report", "type": "Link"}
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Sports Training",
+ "name": "Sports Training",
+ "owner": "Administrator",
+ "public": 1,
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {"label": "Athlete", "link_to": "Athlete", "type": "DocType"},
+  {"label": "Coach", "link_to": "Coach", "type": "DocType"},
+  {"label": "Training Session", "link_to": "Training Session", "type": "DocType"},
+  {"label": "Performance Assessment", "link_to": "Performance Assessment", "type": "DocType"}
+ ],
+ "title": "Sports Training"
+}

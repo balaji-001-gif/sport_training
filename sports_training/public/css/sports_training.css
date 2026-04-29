@@ -1,0 +1,6 @@
+.athlete-card { border-left: 4px solid #1abc9c; padding: 10px; margin-bottom: 10px; }
+.coach-badge { background: #2ecc71; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
+.injury-critical { color: #e74c3c; font-weight: bold; }
+.injury-severe { color: #e67e22; }
+.injury-moderate { color: #f39c12; }
+.injury-minor { color: #27ae60; }

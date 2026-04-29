@@ -1,0 +1,18 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Facility",
+ "autoname": "field:facility_name",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "facility_name", "fieldtype": "Data", "label": "Facility Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "facility_type", "fieldtype": "Select", "label": "Type", "options": "Indoor\nOutdoor\nGym\nPool\nField\nCourt\nTrack\nOther", "in_list_view": 1},
+  {"fieldname": "capacity", "fieldtype": "Int", "label": "Capacity"},
+  {"fieldname": "location", "fieldtype": "Small Text", "label": "Location"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": "1"}
+ ],
+ "permissions": [{"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1}]
+}

@@ -1,0 +1,28 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Membership Plan",
+ "autoname": "field:plan_name",
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "plan_name", "fieldtype": "Data", "label": "Plan Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "duration_months", "fieldtype": "Int", "label": "Duration (Months)", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "fee", "fieldtype": "Currency", "label": "Fee", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"},
+  {"fieldname": "section_inclusions", "fieldtype": "Section Break", "label": "Inclusions"},
+  {"fieldname": "max_sessions_per_month", "fieldtype": "Int", "label": "Max Sessions/Month"},
+  {"fieldname": "personal_training_included", "fieldtype": "Check", "label": "Personal Training"},
+  {"fieldname": "nutrition_consultation", "fieldtype": "Check", "label": "Nutrition Consultation"},
+  {"fieldname": "performance_assessment_included", "fieldtype": "Check", "label": "Performance Assessment"},
+  {"fieldname": "section_desc", "fieldtype": "Section Break", "label": "Description"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Description"}
+ ],
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "delete": 1},
+  {"role": "Coach", "read": 1},
+  {"role": "Athlete", "read": 1}
+ ]
+}

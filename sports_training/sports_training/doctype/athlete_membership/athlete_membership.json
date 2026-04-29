@@ -1,0 +1,31 @@
+{
+ "doctype": "DocType",
+ "module": "Sports Training",
+ "name": "Athlete Membership",
+ "autoname": "naming_series:",
+ "is_submittable": 1,
+ "creation": "2024-01-01 00:00:00",
+ "modified": "2024-01-01 00:00:00",
+ "owner": "Administrator",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "MEM-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "athlete", "fieldtype": "Link", "label": "Athlete", "options": "Athlete", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "athlete_name", "fieldtype": "Data", "label": "Name", "fetch_from": "athlete.athlete_name", "read_only": 1},
+  {"fieldname": "membership_plan", "fieldtype": "Link", "label": "Plan", "options": "Membership Plan", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1, "default": "Today"},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date", "read_only": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nExpired\nCancelled", "default": "Active", "in_list_view": 1},
+  {"fieldname": "section_payment", "fieldtype": "Section Break", "label": "Payment"},
+  {"fieldname": "fee", "fieldtype": "Currency", "label": "Fee", "fetch_from": "membership_plan.fee", "read_only": 1},
+  {"fieldname": "amount_paid", "fieldtype": "Currency", "label": "Amount Paid"},
+  {"fieldname": "balance_due", "fieldtype": "Currency", "label": "Balance", "read_only": 1},
+  {"fieldname": "payment_status", "fieldtype": "Select", "label": "Payment Status", "options": "Unpaid\nPartial\nPaid", "read_only": 1},
+  {"fieldname": "sales_invoice", "fieldtype": "Link", "label": "Sales Invoice", "options": "Sales Invoice", "read_only": 1},
+  {"fieldname": "amended_from", "fieldtype": "Link", "label": "Amended From", "options": "Athlete Membership", "read_only": 1, "no_copy": 1, "print_hide": 1}
+ ],
+ "permissions": [
+  {"role": "Sports Manager", "create": 1, "read": 1, "write": 1, "submit": 1, "cancel": 1, "delete": 1, "report": 1, "export": 1}
+ ]
+}
