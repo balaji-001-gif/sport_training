@@ -22,26 +22,26 @@ fixtures = [
 
 doc_events = {
     "Sales Invoice": {
-        "on_submit": "sports_training.utils.update_membership_payment"
+        "on_submit": "sports_training.sports_training.utils.update_membership_payment"
     }
 }
 
 scheduler_events = {
     "daily": [
-        "sports_training.tasks.send_membership_expiry_reminders",
-        "sports_training.tasks.update_athlete_attendance_stats"
+        "sports_training.sports_training.tasks.send_membership_expiry_reminders",
+        "sports_training.sports_training.tasks.update_athlete_attendance_stats"
     ],
     "weekly": [
-        "sports_training.tasks.generate_performance_reports"
+        "sports_training.sports_training.tasks.generate_performance_reports"
     ]
 }
 
 permission_query_conditions = {
-    "Athlete": "sports_training.utils.get_permission_query_conditions"
+    "Athlete": "sports_training.sports_training.utils.get_permission_query_conditions"
 }
 
 website_route_rules = [
     {"from_route": "/athletes/<path:name>", "to_route": "athletes"},
 ]
 
-after_install = "sports_training.setup.install.after_install"
+after_install = "sports_training.sports_training.setup.install.after_install"
