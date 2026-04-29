@@ -28,20 +28,26 @@ def notify_session_scheduled(doc, method):
         if doc.primary_coach:
             coach_email = frappe.db.get_value("Coach", doc.primary_coach, "email")
             if coach_email:
-                frappe.sendmail(
-                    recipients=[coach_email],
-                    subject=f"New Training Session Scheduled: {doc.name}",
-                    message=f"You have been assigned as the primary coach for session {doc.name} on {doc.session_date} at {doc.start_time}."
-                )
+                try:
+                    frappe.sendmail(
+                        recipients=[coach_email],
+                        subject=f"New Training Session Scheduled: {doc.name}",
+                        message=f"You have been assigned as the primary coach for session {doc.name} on {doc.session_date} at {doc.start_time}."
+                    )
+                except Exception:
+                    frappe.log_error("Session notification email failed for Coach")
         
         for row in doc.athletes:
             athlete_email = frappe.db.get_value("Athlete", row.athlete, "email")
             if athlete_email:
-                frappe.sendmail(
-                    recipients=[athlete_email],
-                    subject=f"Upcoming Training Session Scheduled: {doc.name}",
-                    message=f"A new training session {doc.name} has been scheduled for you on {doc.session_date} at {doc.start_time}."
-                )
+                try:
+                    frappe.sendmail(
+                        recipients=[athlete_email],
+                        subject=f"Upcoming Training Session Scheduled: {doc.name}",
+                        message=f"A new training session {doc.name} has been scheduled for you on {doc.session_date} at {doc.start_time}."
+                    )
+                except Exception:
+                    frappe.log_error("Session notification email failed for Athlete")
 
 
 def notify_injury_alert(doc, method):
@@ -52,11 +58,14 @@ def notify_injury_alert(doc, method):
     if primary_coach:
         coach_email = frappe.db.get_value("Coach", primary_coach, "email")
         if coach_email:
-            frappe.sendmail(
-                recipients=[coach_email],
-                subject=f"Injury Alert: {athlete_name}",
-                message=f"An injury has been recorded for athlete {athlete_name} ({doc.athlete}) on {doc.injury_date}. Type: {doc.injury_type}. Severity: {doc.severity}."
-            )
+            try:
+                frappe.sendmail(
+                    recipients=[coach_email],
+                    subject=f"Injury Alert: {athlete_name}",
+                    message=f"An injury has been recorded for athlete {athlete_name} ({doc.athlete}) on {doc.injury_date}. Type: {doc.injury_type}. Severity: {doc.severity}."
+                )
+            except Exception:
+                frappe.log_error("Injury alert email failed")
 
 
 def notify_fitness_test_completed(doc, method):
@@ -65,9 +74,13 @@ def notify_fitness_test_completed(doc, method):
     athlete_name = frappe.db.get_value("Athlete", doc.athlete, "athlete_name")
     
     if athlete_email:
-        frappe.sendmail(
-            recipients=[athlete_email],
-            subject=f"Fitness Test Results: {doc.name}",
-            message=f"Dear {athlete_name},<br>Your fitness test ({doc.test_type}) results from {doc.test_date} have been recorded. Please log in to view details."
-        )
+        try:
+            frappe.sendmail(
+                recipients=[athlete_email],
+                subject=f"Fitness Test Results: {doc.name}",
+                message=f"Dear {athlete_name},<br>Your fitness test ({doc.test_type}) results from {doc.test_date} have been recorded. Please log in to view details."
+            )
+        except Exception:
+            frappe.log_error("Fitness test notification email failed")
+
 
