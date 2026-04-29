@@ -23,6 +23,15 @@ fixtures = [
 doc_events = {
     "Sales Invoice": {
         "on_submit": "sports_training.sports_training.utils.update_membership_payment"
+    },
+    "Training Session": {
+        "on_submit": "sports_training.sports_training.utils.notify_session_scheduled"
+    },
+    "Injury Record": {
+        "after_insert": "sports_training.sports_training.utils.notify_injury_alert"
+    },
+    "Fitness Test": {
+        "after_insert": "sports_training.sports_training.utils.notify_fitness_test_completed"
     }
 }
 
